@@ -26,7 +26,9 @@ function getHumanChoice() {
 
 // console.log(getHumanChoice())
 
-function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice, computerChoice, round) {
+    console.log(String(round))
+
     humanChoice = humanChoice.toLowerCase();
     console.log("The player's choice: " + humanChoice);
 
@@ -71,11 +73,11 @@ function playRound(humanChoice, computerChoice) {
 let humanScore = 0;
 let computerScore = 0;
 
-playRound(getHumanChoice(), getComputerChoice())
-playRound(getHumanChoice(), getComputerChoice())
-playRound(getHumanChoice(), getComputerChoice())
-playRound(getHumanChoice(), getComputerChoice())
-playRound(getHumanChoice(), getComputerChoice())
+playRound(getHumanChoice(), getComputerChoice(), "Round 1")
+playRound(getHumanChoice(), getComputerChoice(), "Round 2")
+playRound(getHumanChoice(), getComputerChoice(), "Round 3")
+playRound(getHumanChoice(), getComputerChoice(), "Round 4")
+playRound(getHumanChoice(), getComputerChoice(), "Round 5")
 
 // Results
 
