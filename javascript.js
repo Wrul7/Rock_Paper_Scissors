@@ -5,7 +5,7 @@ Check the random num
 Conditional
 */
 
-function getComputerChoice () {
+function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3);
 
     if (randomNum == 0) {
@@ -19,27 +19,56 @@ function getComputerChoice () {
 
 // console.log(getComputerChoice());
 
-function getHumanChoice () {
+function getHumanChoice() {
     let choice = prompt("Pick between the three:\nRock\nPaper\nScissors\nType your answer:");
     return choice;
 }
 
 // console.log(getHumanChoice())
 
-function playRound (humanChoice, computerChoice) {
-    humanChoice = getHumanChoice().toLowerCase();
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
     console.log("The player's choice: " + humanChoice);
 
-    computerChoice = getComputerChoice()
+    computerChoice = computerChoice.toLowerCase();
     console.log("The computer's choice: " + computerChoice);
 
-    let winner = "null";
-    let loser = "null";
-
-    console.log("You win! " + winner + " beats " + loser)
+    if (humanChoice == "rock") {
+        if (computerChoice == "rock") {
+            console.log("It's a tie!");
+        } else if (computerChoice == "paper") {
+            console.log("Computer choses paper. You lose.");
+            computerScore += 1;
+        } else if (computerChoice == "scissors") {
+            console.log("Computer chose scissors. You win!")
+            humanScore += 1;
+        }
+    } else if (humanChoice == "paper") {
+        if (computerChoice == "paper") {
+            console.log("It's a tie!");
+        } else if (computerChoice == "scissors") {
+            console.log("Computer choses scissors. You lose.");
+            computerScore += 1;
+        } else if (computerChoice == "rock") {
+            console.log("Computer chose rock. You win!")
+            humanScore += 1;
+        }
+    } else if (humanChoice == "scissors") {
+        if (computerChoice == "scissors") {
+            console.log("It's a tie!");
+        } else if (computerChoice == "rock") {
+            console.log("Computer choses rock. You lose.");
+            computerScore += 1;
+        } else if (computerChoice == "paper") {
+            console.log("Computer chose paper. You win!")
+            humanScore += 1;
+        }
+    } else {
+        console.log("Invalid input.")
+    }
 }
 
-playRound()
+playRound(getHumanChoice(), getComputerChoice())
 
 let humanScore = 0;
 let computerScore = 0;
