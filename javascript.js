@@ -73,11 +73,11 @@ function playRound(humanChoice, computerChoice, round) {
 let humanScore = 0;
 let computerScore = 0;
 
-playRound(getHumanChoice(), getComputerChoice(), "Round 1")
-playRound(getHumanChoice(), getComputerChoice(), "Round 2")
-playRound(getHumanChoice(), getComputerChoice(), "Round 3")
-playRound(getHumanChoice(), getComputerChoice(), "Round 4")
-playRound(getHumanChoice(), getComputerChoice(), "Round 5")
+// playRound(getHumanChoice(), getComputerChoice(), "Round 1")
+// playRound(getHumanChoice(), getComputerChoice(), "Round 2")
+// playRound(getHumanChoice(), getComputerChoice(), "Round 3")
+// playRound(getHumanChoice(), getComputerChoice(), "Round 4")
+// playRound(getHumanChoice(), getComputerChoice(), "Round 5")
 
 // Results
 
@@ -89,4 +89,23 @@ if (humanScore > computerScore) {
 } else if (humanScore == computerScore) {
     console.log("It's a tie!")
 }
+
+const player_name = "Sample";
+let round_number = 0
+let round_winner = "Sample";
+
+//DOM Manipulation
+const disp_player_name = document.querySelector(".player_name");
+const disp_player_score = document.querySelector(".player_score");
+const disp_computer_score = document.querySelector(".computer_score");
+const disp_round_number = document.querySelector(".round_number");
+const disp_computer_choice = document.querySelector(".computer_choice");
+const disp_round_winner = document.querySelector(".round_winner");
+
+disp_player_name.textContent = "Hello, " + player_name + "!";
+disp_player_score.textContent = player_name + ": " + humanScore;
+disp_computer_score.textContent = "Computer: " + computerScore;
+disp_round_number.textContent = "Round " + round_number;
+disp_computer_choice.textContent = "Computer picks " + getComputerChoice();
+disp_round_winner.textContent = round_winner + " wins this round!";
 
