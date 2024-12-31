@@ -9,4 +9,65 @@
 body {
     display: flex;
     flex-direction: column;
+    margin: 20px 20vh;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container_two {
+    display: flex;
+    margin: 20px 0;
+    background-color: rgba(252, 255, 168, 0.799);
+}
+
+.container_two_one,
+.container_two_two {
+    flex: 1;
+}
+
+.container_two_two h4 {
+    text-align: right;
+}
+
+.container_three {
+    display: flex;
+    background-color: rgba(178, 251, 251, 0.781);
+}
+
+.container_three_one,
+.container_three_two {
+    flex: 1;
+}
+
+.container_three_one {
+    flex: 2;
+}
+
+.container_three_two {
+    text-align: center;
+    margin: auto;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons button {
+    color: black;
+    width: fit-content;
+    padding: 5px;
+    margin: 2.5px 0px;
+}
+
+.round_winner {
+    margin: 2.5px;
+    font-weight: 600;
+    font-size: 25px;
 }
