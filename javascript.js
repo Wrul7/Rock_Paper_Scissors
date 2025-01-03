@@ -18,10 +18,11 @@ function getComputerChoice() {
 }
 
 function playRound(humanChoice, computerChoice, round) {
-    
+    // console.log(computerChoice);
+
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
-    disp_computer_choice.textContent = "Computer picks " + getComputerChoice();
+    disp_computer_choice.textContent = "Computer picks " + computerChoice;
 
     if (humanChoice == "rock") {
         if (computerChoice == "rock") {
@@ -59,16 +60,12 @@ function playRound(humanChoice, computerChoice, round) {
     disp_computer_score.textContent = "Computer: " + computerScore;
 }
 
-// function winnerCheck() {
-
-// }
 
 let humanScore = 0;
 let computerScore = 0;
 
-const player_name = "Sample";
+const player_name = prompt("Enter your name:", "Nameless entity");
 let round_number = 0
-let round_winner = "Sample";
 
 //DOM Manipulation
 const disp_player_name = document.querySelector(".player_name");
@@ -89,6 +86,7 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
     button.addEventListener("click",  (e) => {
+        // console.log(e.target.textContent);
         playRound(e.target.textContent, getComputerChoice(), round_number)
         disp_round_number.textContent = "Round " + round_number;
         round_number += 1;
@@ -97,13 +95,22 @@ buttons.forEach((button) => {
             toRemove.forEach((elem) => {elem.remove();});
             const winnerDisplay = document.createElement("h1");
             container_three.appendChild(winnerDisplay);
+            container_three.style.flexDirection = "column";
+            winnerDisplay.style.marginTop = "20px";
+            winnerDisplay.style.marginBottom = "10px";
+
             if (humanScore >= 5) {
                 winnerDisplay.textContent = "You win!";
-            } else if (computerScore) {
+                container_three.style.backgroundColor = "#bcfa9d";
+                winnerDisplay.style.marginBottom = "20px";
+            } else if (computerScore >= 5) {
                 winnerDisplay.textContent = "You lose."
+                container_three.style.backgroundColor = "#fa9d9d";
                 const goodLuck = document.createElement("p");
                 container_three.appendChild(goodLuck);
-                goodLuck.textContent = "Better luck next time~"
+                goodLuck.textContent = "Better luck next time~";
+                goodLuck.style.textAlign = "Center";
+                goodLuck.style.marginBottom = "20px";
             }
         }
         // console.log(humanScore);
